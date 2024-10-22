@@ -28,13 +28,14 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 find_package(CubismCore REQUIRED)
 find_package(CubismFramework REQUIRED)
 # find_package(OpenGL REQUIRED)
-find_package(Qt5 COMPONENTS OpenGL Widgets REQUIRED)
+# find_package(Qt6 COMPONENTS OpenGL Widgets REQUIRED)
+find_package(Qt6 REQUIRED COMPONENTS OpenGLWidgets)
 
 # Link libraries to app.
 target_link_libraries(${LIB_NAME}
   ${CubismFramework_LIBRARIES}
   ${CubismCore_LIBRARIES}
-  Qt5::OpenGL Qt5::Widgets
+  Qt6::Widgets Qt6::OpenGLWidgets
 )
 
 # Specify include directories.
